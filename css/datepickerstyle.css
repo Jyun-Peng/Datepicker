@@ -1,0 +1,113 @@
+.datepicker-wrapper, .datepicker, .datepicker > .close-datepicker, .datepicker > .header, .datepicker > .header > .title, .datepicker > .header > .prev, .datepicker > .header > .next, .datepicker > .show-date, .datepicker > .show-date > .date {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.datepicker-wrapper {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.datepicker-wrapper.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.datepicker {
+  width: 320px;
+  background-color: #efefef;
+  padding: 16px 16px 12px 16px;
+  border-radius: 8px;
+}
+
+.datepicker > .close-datepicker {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  line-height: 36px;
+  width: 36px;
+  text-align: center;
+  border-radius: 18px;
+  background-color: #efefef;
+  color: #555;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.datepicker > .close-datepicker:active {
+  background-color: #ccc;
+}
+
+.datepicker > .header {
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+  padding: 0 16px;
+}
+
+.datepicker > .header > .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.datepicker > .header > .prev, .datepicker > .header > .next {
+  width: 28px;
+  line-height: 28px;
+  text-align: center;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+.datepicker > .show-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.datepicker > .show-date > .date {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  color: #555;
+  -ms-flex-preferred-size: 14.285714%;
+      flex-basis: 14.285714%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=datepickerstyle.css.map */
