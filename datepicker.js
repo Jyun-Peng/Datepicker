@@ -2,13 +2,13 @@ const datePickerWrapper = document.querySelector('.datepicker-wrapper');
 datePickerWrapper.innerHTML=
 `      
 <div class="datepicker">
-    <div class="close-datepicker">X</div>
-    <div class="header">
-        <div class="prev"><</div>
-        <div class="title"></div>
-        <div class="next">></div>
+    <div class="btn--close-datepicker">X</div>
+    <div class="datepicker__top">
+        <div class="btn--prev"><</div>
+        <div class="datepicker__show-date"></div>
+        <div class="btn--next">></div>
     </div>
-    <div class="show-date">
+    <div class="datepicker__choose-date">
         <div class="date"></div>
         <div class="date"></div>
         <div class="date"></div>
@@ -48,11 +48,11 @@ datePickerWrapper.innerHTML=
         <div class="date"></div>
     </div>
 </div>`
-const datepickerHeader = document.querySelector('.datepicker>.header>.title');
-const nextBtn = document.querySelector('.datepicker>.header>.next');
-const prevBtn = document.querySelector('.datepicker>.header>.prev');
-const showDate = document.querySelector('.datepicker>.show-date');
-const dates = document.querySelectorAll('.datepicker>.show-date>.date');
+const datepicker = datePickerWrapper.querySelector('.datepicker')
+const datepickerShowDate = datepicker.querySelector('.datepicker__show-date');
+const nextBtn = datepicker.querySelector('.datepicker__top>.btn--next');
+const prevBtn = datepicker.querySelector('.datepicker__top>.btn--prev');
+const dates = datepicker.querySelectorAll('.datepicker__choose-date>.date');
 let selectedDatepickerInput = null;
 
 
@@ -107,7 +107,7 @@ const getFirstWeekdayOfThisMonth = (year ,month)=>{
     return firstWeekDayOfThisMonth;
 }
 const setShowDate = (year,month)=>{
-    datepickerHeader.textContent = `${year}年 ${month}月`;
+    datepickerShowDate.textContent = `${year}年 ${month}月`;
     let DayNumArr = getMonthDayOfYear(year);
     let dayNum = DayNumArr[month-1];
     let startWeekDay = (getFirstWeekdayOfThisMonth(year, month)+1)%7;
@@ -129,7 +129,7 @@ document.querySelector('body').addEventListener('click',e=>{
         selectedDatepickerInput = e.target;
         return;
     }
-    if(e.target.classList.contains('prev')){
+    if(e.target.classList.contains('btn--prev')){
         thisMonth--;
         if(thisMonth<1){
             thisYear -= 1;
@@ -138,7 +138,7 @@ document.querySelector('body').addEventListener('click',e=>{
         setShowDate(thisYear,thisMonth);
         return;
     }
-    if(e.target.classList.contains('next')){
+    if(e.target.classList.contains('btn--next')){
         thisMonth++;
         if(thisMonth>12){
             thisYear += 1;
@@ -160,7 +160,7 @@ document.querySelector('body').addEventListener('click',e=>{
         }
         return;
     }
-    if(e.target.classList.contains('close-datepicker')){
+    if(e.target.classList.contains('btn--close-datepicker')){
         datePickerWrapper.classList.remove('active');
     }
 })

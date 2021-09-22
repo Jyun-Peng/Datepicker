@@ -1,4 +1,4 @@
-.datepicker-wrapper, .datepicker, .datepicker > .close-datepicker, .datepicker > .header, .datepicker > .header > .title, .datepicker > .header > .prev, .datepicker > .header > .next, .datepicker > .show-date, .datepicker > .show-date > .date {
+.datepicker-wrapper, .datepicker, .datepicker > .btn--close-datepicker, .datepicker > .datepicker__top, .datepicker > .datepicker__top > .datepicker__show-date, .datepicker > .datepicker__top > .btn--prev, .datepicker > .datepicker__top > .btn--next, .datepicker > .datepicker__choose-date, .datepicker > .datepicker__choose-date > .date {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,6 +6,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  font-size: 16px;
 }
 
 .datepicker-wrapper {
@@ -37,7 +38,7 @@
   border-radius: 8px;
 }
 
-.datepicker > .close-datepicker {
+.datepicker > .btn--close-datepicker {
   position: absolute;
   right: -10px;
   top: -10px;
@@ -52,11 +53,11 @@
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.datepicker > .close-datepicker:active {
+.datepicker > .btn--close-datepicker:active {
   background-color: #ccc;
 }
 
-.datepicker > .header {
+.datepicker > .datepicker__top {
   height: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,13 +72,13 @@
   padding: 0 16px;
 }
 
-.datepicker > .header > .title {
+.datepicker > .datepicker__top > .datepicker__show-date {
   font-size: 20px;
   font-weight: 600;
   color: #333;
 }
 
-.datepicker > .header > .prev, .datepicker > .header > .next {
+.datepicker > .datepicker__top > .btn--prev, .datepicker > .datepicker__top > .btn--next {
   width: 28px;
   line-height: 28px;
   text-align: center;
@@ -88,7 +89,7 @@
   cursor: pointer;
 }
 
-.datepicker > .show-date {
+.datepicker > .datepicker__choose-date {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96,7 +97,7 @@
       flex-wrap: wrap;
 }
 
-.datepicker > .show-date > .date {
+.datepicker > .datepicker__choose-date > .date {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
